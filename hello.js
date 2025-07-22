@@ -11,15 +11,15 @@ if (lives <= 0){
 const num = +prompt(Enter the number);
 
 if ( num === randomNumber){
-    alert(Тетяно, Ви розумничка і вгадала!);
+    alert(Наталко, Ви розумничка і вгадала!);
     return;
 }else if (num > randomNumber){
     lives--
-    alert(Тетяно, число менше. У Вас лишилося ${lives} спроб)
+    alert(Наталко, правильне число менше. У Вас лишилося ${lives} спроб)
     guessTheNumber();
 }else {
     lives--
-    alert(Тетяно, число більше. У Вас лишилося ${lives} спроб)
+    alert(Наталко, правильне число більше. У Вас лишилося ${lives} спроб)
     guessTheNumber();
 }
 }
