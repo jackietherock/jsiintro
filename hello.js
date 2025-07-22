@@ -1,19 +1,28 @@
-let name = prompt(`enter your name`);
-const greeting = 'Hello, ';
-alert(greeting + `${name}!`);
+const randomNumber = Math.floor(Math.random() * 100) + 1
+let lives = 15
 
-let birthYear = +prompt(`enter your birth year`)
-const currentYear = 2025
-alert(currentYear - birthYear)
 
-let squareSideLength = +prompt('enter the square side length')
-const sidesAmount = 4
-alert(sidesAmount * squareSideLength)
 
-let distance = +prompt(`enter the distance in kilometers`)
-let timeOfArrival = +prompt(`enter time for ride in hours`)
-alert(distance  / timeOfArrival)
+function guessTheNumber (){
+if (lives <= 0){
+    alert(You've lost!);
+    return;
+}
+const num = +prompt(Enter the number);
 
-const euroCurrency = 0.86
-let dollarToEuros = +prompt(`enter dollars amount`)
-alert(euroCurrency * dollarToEuros)
+if ( num === randomNumber){
+    alert(Тетяно, Ви розумничка і вгадала!);
+    return;
+}else if (num > randomNumber){
+    lives--
+    alert(Тетяно, число менше. У Вас лишилося ${lives} спроб)
+    guessTheNumber();
+}else {
+    lives--
+    alert(Тетяно, число більше. У Вас лишилося ${lives} спроб)
+    guessTheNumber();
+}
+}
+console.log(randomNumber);
+
+guessTheNumber();
